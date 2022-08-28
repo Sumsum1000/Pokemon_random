@@ -15,8 +15,9 @@ function App() {
   const { currentCard, setCurrentCard, visible, setVisible} = useContext(PokemonContext);
 
   useEffect(() => {
-    setVisible(1);
-    setCurrentCard(<Card visible={visible}/>);
+    fetch('https://pokeapi.co/api/v2/pokemon/9')
+    .then(result => result.json())
+    .then(data => setCurrentCard(data))
   }, [])
 
   useEffect(() => {

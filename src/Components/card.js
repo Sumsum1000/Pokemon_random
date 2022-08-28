@@ -7,7 +7,7 @@ import { PokemonContext } from './pokemonContext';
 
 export const Card = () => {
 
-    const { visible } = useContext(PokemonContext)
+    const { visible, currentCard } = useContext(PokemonContext)
 
 
     const cardVariants = {
@@ -44,12 +44,12 @@ export const Card = () => {
                     }}
                 >
                     <motion.div className={style['card-container']}>
-                        <h3>{'name'}</h3>
-                        <img src={sample}/>
+                        <h3>{currentCard.name}</h3>
+                        <img src={currentCard.sprites.other.dream_world.front_default}/>
                         <div className={style['text-container']}>
                             <div className={style['experience-container']}>
                                 <p>base experience:</p>
-                                <p>{128}</p>
+                                <p>{currentCard.base_experience}</p>
                             </div>
                             <div className={style['abilities-container']}>
                                 <p>abilities:</p>

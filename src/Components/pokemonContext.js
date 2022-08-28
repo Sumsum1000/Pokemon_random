@@ -4,7 +4,7 @@ import { Card } from './card';
 export const PokemonContext = React.createContext({
    pokemons: [],
    visible: true,
-   currentCard: null,
+   currentCard: {},
    setPokemons: () => {},
    setCurrentCard: () => {},
    setVisible: () => {},
@@ -15,7 +15,7 @@ export const PokemonContext = React.createContext({
 
 export const PokemonProvider = ({children}) => {
 
-    const [currentCard, setCurrentCard] = useState();
+    const [currentCard, setCurrentCard] = useState({});
     const [visible, setVisible] = useState(true);
     const [loader, setLoader] = useState(false)
 
@@ -24,14 +24,21 @@ export const PokemonProvider = ({children}) => {
     //      setLoader(true)
     //     fetch('https://pokeapi.co/api/v2/pokemon/1')
     //     .then(result => result.json())
-    //     .then(data => setCurrentPokemon({name: data.name, isVisible: true}))
+    //     .then(data => setCurrentCard(data))
     // }, [])
+
+    const createRandomNumber = () => {
+        return Math.floor(Math.random() * 500);
+    }
 
     const fetchPokemon = () => {
         setVisible(false)
         setTimeout(() => {
             setVisible(true)
             //pokemon change
+             fetch(`https://pokeapi.co/api/v2/pokemon/${createRandomNumber()}`)
+            .then(result => result.json())
+            .then(data => setCurrentCard(data))
         }, 1000)
     }
 
