@@ -2,11 +2,13 @@
 
 $rotation-speed: 2s;
 
+
+
 .card-clipper{
     position: relative;
     //bottom: 20%;
     //margin-top: 200px;
-    width: 340px;
+    width: 100%px;
     height: 440px;
 
     display: flex;
@@ -19,7 +21,8 @@ $rotation-speed: 2s;
     &::after{
         content: '';
         //background: conic-gradient(orange 20deg, transparent 120deg);
-        background: conic-gradient(transparent 0deg , orange 50deg 170deg, transparent 220deg);
+        //background: conic-gradient(transparent 0deg , orange 50deg 170deg, transparent 220deg);
+        background: let(--backround-frame);
         position: absolute;
         width: 170%;
         height: 170%;
@@ -51,11 +54,13 @@ $rotation-speed: 2s;
 
         img{
             //width: 70%;
+            grid-template-rows: image;
             height: 50%;
             width: 70%;
         }
 
         h3{
+            grid-template-rows: title;
             font-size: 35px;
         }
 

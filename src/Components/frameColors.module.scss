@@ -1,0 +1,59 @@
+// .back-color{
+//     &::after {
+//         background: conic-gradient(transparent 0deg , orange 50deg 170deg, transparent 220deg);
+//     }
+// }
+
+.back-color{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(247, 255, 1) 50deg 170deg, transparent 220deg);
+    }
+}
+
+.back-fire{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(203, 44, 0) 50deg 170deg, transparent 220deg);
+    }
+}
+
+.back-water{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(50, 205, 232) 50deg 170deg, transparent 220deg);
+    } 
+}
+
+.back-electric{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(3, 78, 132) 50deg 170deg, transparent 220deg);
+    } 
+}
+
+.back-grass{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(71, 203, 0) 50deg 170deg, transparent 220deg);
+    }
+}
+
+.back-ice{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(170, 225, 242) 50deg 170deg, transparent 220deg);
+    } 
+}
+
+.back-poison{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(140, 35, 197) 50deg 170deg, transparent 220deg);
+    } 
+}
+
+.back-ground{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(108, 99, 80) 50deg 170deg, transparent 220deg);
+    } 
+}
+
+.back-rock{
+    &::after {
+        background: conic-gradient(transparent 0deg , rgb(151, 151, 151) 50deg 170deg, transparent 220deg);
+    } 
+}

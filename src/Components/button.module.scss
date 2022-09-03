@@ -1,4 +1,8 @@
 .btn{
-    position: relative;
-
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+    // grid-template-rows: button;
+    border-radius: 10px;
 }

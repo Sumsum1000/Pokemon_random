@@ -12,17 +12,12 @@ import { PokemonContext } from './Components/pokemonContext';
 
 function App() {
 
-  const { currentCard, setCurrentCard, visible, setVisible} = useContext(PokemonContext);
+  const { setCurrentCard, visible, setCurrentImage, changeFrameColor} = useContext(PokemonContext);
 
-  useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/9')
-    .then(result => result.json())
-    .then(data => setCurrentCard(data))
-  }, [])
 
-  useEffect(() => {
-    console.log('visible: ', visible);
-  }, [visible])
+
+
+  
 
   /* 
     action
@@ -35,9 +30,11 @@ function App() {
   return (
     <div className="App">
         <div className='root-container'>
-            <Title />
-            <Card/>
-            <Button />
+            <div className='grid-container'>
+                <Title />
+                <Card/>
+                <Button />
+            </div>
         </div>    
     </div>
   );

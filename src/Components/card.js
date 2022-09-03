@@ -1,4 +1,5 @@
 import style from './card2.module.scss';
+import frames from './frameColors.module.scss';
 import sample from '../graphics/pokemon_sample.png'
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,12 +8,12 @@ import { PokemonContext } from './pokemonContext';
 
 export const Card = () => {
 
-    const { visible, currentCard } = useContext(PokemonContext)
+    const { visible, currentCard, frameColor, currentImage, type } = useContext(PokemonContext)
 
 
     const cardVariants = {
         init: {
-            scale: 0.5,
+            scale: 0.2,
             opacity: 0
         },
         animation: {
@@ -20,16 +21,16 @@ export const Card = () => {
             opacity: 1,
             transition: {
                 type: 'spring',
-                stiffness: 150,
-                duration: 1
+                stiffness: 80,
+                duration: 0.6 //1
             }
         }
     }
-
+    
     return(
         <AnimatePresence>
             {visible && <motion.div 
-                    className={style['card-clipper']}
+                    className={[style['card-clipper'], frames[frameColor]].join(' ')}
                     visible={visible}
                     variants={cardVariants}
                     initial='init'
@@ -45,15 +46,24 @@ export const Card = () => {
                 >
                     <motion.div className={style['card-container']}>
                         <h3>{currentCard.name}</h3>
-                        <img src={currentCard.sprites.other.dream_world.front_default}/>
+                        <img src={currentImage}/>
                         <div className={style['text-container']}>
                             <div className={style['experience-container']}>
                                 <p>base experience:</p>
-                                <p>{currentCard.base_experience}</p>
+                                <span>
+                                    <strong>
+                                        {currentCard.base_experience}
+                                    </strong>
+                                </span>
                             </div>
                             <div className={style['abilities-container']}>
-                                <p>abilities:</p>
-                                <ul> 
+                                <span>type:</span>
+                                <span>
+                                    <strong>
+                                        {type}
+                                    </strong>
+                                </span>
+                                {/* <ul> 
                                     <li>
                                         <p><strong>skill 1</strong></p>
                                     </li>
@@ -63,7 +73,7 @@ export const Card = () => {
                                     <li>
                                     <strong>skill 3</strong>
                                     </li>
-                                </ul>
+                                </ul> */}
                             </div>
                         </div>
                     </motion.div>

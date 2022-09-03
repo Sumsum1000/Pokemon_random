@@ -13,6 +13,19 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
+
+ 
+
+}
+
+.grid-container{
+  position: relative;
+  width: 350px;
+  display: grid;
+  grid-template-rows: 100px 450px 20px;
+  /* grid-template-areas: 'title'
+                       'image'
+                       'button'; */
 }
 
 .App-logo {
